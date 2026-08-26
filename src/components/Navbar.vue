@@ -15,9 +15,9 @@ function toggleLang() {
 <template>
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a href="#top" class="flex items-center gap-2">
-        <img :src="logoIcon" alt="MightyLink" class="h-8 w-auto" />
-        <span class="text-lg font-bold tracking-tight text-slate-900">MightyLink</span>
+      <a href="#top" class="flex items-center gap-2.5">
+        <img :src="logoIcon" alt="MightyLink" class="h-10 md:h-11 w-auto object-contain" />
+        <span class="text-xl font-bold tracking-tight text-slate-900">MightyLink</span>
       </a>
 
       <div class="hidden items-center gap-8 md:flex">

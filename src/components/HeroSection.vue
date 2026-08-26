@@ -43,7 +43,7 @@ const { t } = useI18n()
         <span class="block bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{{ t('hero.title2') }}</span>
       </h1>
 
-      <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
+      <p class="mx-auto mt-6 max-w-3xl text-lg text-slate-600 break-keep">
         {{ t('hero.desc') }}
       </p>
 
@@ -67,32 +67,6 @@ const { t } = useI18n()
           <p class="mt-1 text-lg font-bold text-pink-600">{{ t('hero.connectTag') }}</p>
           <p class="mt-2 text-sm text-slate-600">{{ t('hero.connectDesc') }}</p>
         </a>
-      </div>
-
-      <div class="mx-auto mt-8 max-w-3xl text-center">
-        <p class="text-xs font-medium text-slate-500">{{ t('contact.docsTitle') }} — {{ t('contact.docsDesc') }}</p>
-        <div class="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href="./docs/Mighty_AISG_Security_Platform_v1.00.pdf"
-            download
-            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 hover:border-blue-400 hover:text-blue-600"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" />
-            </svg>
-            {{ t('contact.docSg') }}
-          </a>
-          <a
-            href="./docs/Mighty_Connect_Security_Platform_v1.00.pdf"
-            download
-            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 hover:border-blue-400 hover:text-blue-600"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" />
-            </svg>
-            {{ t('contact.docConnect') }}
-          </a>
-        </div>
       </div>
     </div>
   </section>
