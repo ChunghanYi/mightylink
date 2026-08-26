@@ -11,14 +11,15 @@ Vue 3, Vite, Tailwind CSS, Vue I18n을 기반으로 구축된 단일 페이지 �
    - 한국어 (KO) 및 영어 (EN) 실시간 원클릭 언어 전환 지원.
    - `src/locales/ko.js`, `src/locales/en.js`
 2. **사이버보안 & AI 테크놀로지 다크 테마**:
-   - 네온 시안, 일렉트릭 블루, 에메랄드 그린 액센트와 글래스모피즘(Glassmorphism) 기반 모던 UI.
-   - 모바일, 태블릿, 데스크톱 완전 반응형 레이아웃.
+   - 밝은 톤(Light Theme): 화이트/라이트 그레이 바탕(slate-50/white), 포인트 컬러는 블루~시안 계열(신뢰감/보안 이미지) 1~2가지로 절제
+   - 글래스모피즘·네온 등 과한 이펙트 배제, 여백과 타이포그래피 중심의 담백한 엔터프라이즈 스타일
+   - 모바일/태블릿/데스크톱 반응형
 3. **핵심 제품 라인업 상세 소개**:
    - **MightySG AI Security Platform**: WireGuard + PQC(ML-KEM 1024) + 2FA, eBPF TC/XDP 커널 ZTNA, agentgateway L7 AI Proxy (CEL Guardrails, DLP, MCP 다중화, A2A 에이전트 통신).
    - **MightyConnect P2P Security Platform**: Mesh P2P Direct Connect (NAT Hole Punching), WERP E2E 암호화 릴레이, FD.io VPP & DPDK 10Gbps+ Software ASIC 엔진, 통합 Access Rule & VPN Group, 7대 산업별 실적용 사례.
 4. **문의 및 기술 지원 (Contact)**:
    - 회사명: MightyLink (마이티링크)
-   - 대표 이메일: `chunghan.yi@gmail.com`
+   - 대표 이메일: `----@gmail.com`
    - 공식 웹사이트: `www.mightyconn.com`
 
 ---
@@ -64,35 +65,29 @@ npm run build
 
 ## 📂 디렉토리 구조
 ```text
-startup/
-├── docs/                        # 기술 백서 및 기획 문서
-│   ├── HOMEPAGE_PROPOSAL.md     # 종합 기획 및 기술 설계서
-│   ├── Mighty_ZTNA_AI_Security_Platform_v0.97.pdf
-│   └── Mighty_Connect_Security_Platform_v0.96.pdf
+startup2/
+├── docs/
+│   ├── HOMEPAGE_PLAN.md                 # 본 기획서
+│   ├── Mighty_AISG_Security_Platform_v1.00.pdf
+│   └── Mighty_Connect_Security_Platform_v1.0.pdf
 ├── public/
-│   └── favicon.svg              # MightyLink 공식 파비콘
+│   └── favicon.svg
 ├── src/
-│   ├── assets/
-│   │   └── main.css             # Tailwind CSS 및 커스텀 사이버 테마 스타일
+│   ├── assets/main.css
 │   ├── components/
-│   │   ├── Navbar.vue           # 상단 네비게이션 & 언어 전환
-│   │   ├── HeroSection.vue      # 메인 비주얼 & 핵심 지표
-│   │   ├── CompanySection.vue   # MightyLink 제로 트러스트 비전
-│   │   ├── MightySGSection.vue  # MightySG AI 보안 플랫폼
-│   │   ├── MightyConnectSection.vue # MightyConnect P2P 메쉬 보안 플랫폼
-│   │   ├── TechDeepDiveSection.vue  # 기술 비교표 & 심층 아키텍처
-│   │   ├── UseCasesSection.vue      # 7대 산업별 실적용 사례
-│   │   ├── DeviceSupportSection.vue # 지원 디바이스 생태계
-│   │   ├── ContactSection.vue       # 문의처 및 PoC 신청 폼
-│   │   └── Footer.vue           # 푸터
-│   ├── locales/
-│   │   ├── ko.js                # 한국어 번역 리소스
-│   │   └── en.js                # 영어 번역 리소스
-│   ├── i18n.js                  # Vue I18n 설정
-│   ├── App.vue                  # 루트 SPA 컴포넌트
-│   └── main.js                  # 엔트리포인트
-├── deploy-local.sh              # 로컬 Apache2 배포 스크립트
-├── index.html                   # HTML 템플릿
+│   │   ├── Navbar.vue
+│   │   ├── HeroSection.vue
+│   │   ├── CompanySection.vue
+│   │   ├── MightySGSection.vue
+│   │   ├── MightyConnectSection.vue
+│   │   └── ContactSection.vue
+│   ├── locales/{ko,en}.js
+│   ├── i18n.js
+│   ├── App.vue
+│   └── main.js
+├── deploy-local.sh                      # 로컬 Apache2 배포 스크립트
+├── index.html
 ├── package.json
-└── vite.config.js               # Vite 빌드 설정
+├── tailwind.config.js
+└── vite.config.js
 ```
