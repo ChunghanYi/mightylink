@@ -1,6 +1,6 @@
 export default {
   brand: {
-    name: 'MightyLink',
+    name: 'MightyLink Lab.',
   },
   nav: {
     company: 'Company',
@@ -103,15 +103,16 @@ export default {
     inquiryDesc: 'We provide prompt assistance with network environment assessments, appliance PoC evaluations, technical specifications, and any other inquiries.',
     company: 'Company',
     email: 'Official Contact',
-    sla: 'Prompt response within 24 business hours',
     sendEmail: 'Send Inquiry via Email',
     docsTitle: 'Product Brochures & Technical Whitepapers',
-    docsDesc: "Official whitepapers (PDF) detailing the in-depth architecture and technical specifications of MightyLink's core platforms.",
+    docsDesc: "Official whitepapers (PDF) detailing the in-depth architecture and technical specifications of MightyLink Lab.'s core platforms.",
     docSg: 'MightyAISG Whitepaper',
     docSgDesc: 'AI Security Gateway & ZTNA Technical Whitepaper',
     docConnect: 'MightyConnect Whitepaper',
     docConnectDesc: 'Mesh P2P & VPP High-Speed Packet Relay Technical Whitepaper',
     downloadPdf: 'Download PDF',
+    docDownloads: '{count} downloads',
+    downloading: 'Downloading...',
   },
   footer: {
     trademark: '"WireGuard" and the "WireGuard" logo are registered trademarks of Jason A. Donenfeld.',

@@ -1,6 +1,6 @@
-# MightyLink Official Website (SPA)
+# MightyLink Lab. Official Website (SPA)
 
-MightyLink(마이티링크) 공식 웹사이트 소스코드 저장소입니다.  
+MightyLink Lab.(마이티링크 랩) 공식 웹사이트 소스코드 저장소입니다.  
 Vue 3, Vite, Tailwind CSS, Vue I18n을 기반으로 구축된 단일 페이지 애플리케이션(SPA)으로, **Cloudflare Pages** 배포 및 **로컬 Apache2** 웹서버 환경에 100% 최적화되어 있습니다.
 
 ---
@@ -18,7 +18,7 @@ Vue 3, Vite, Tailwind CSS, Vue I18n을 기반으로 구축된 단일 페이지 �
    - **MightySG AI Security Platform**: WireGuard + PQC(ML-KEM 1024) + 2FA, eBPF TC/XDP 커널 ZTNA, agentgateway L7 AI Proxy (CEL Guardrails, DLP, MCP 다중화, A2A 에이전트 통신).
    - **MightyConnect P2P Security Platform**: Mesh P2P Direct Connect (NAT Hole Punching), WERP E2E 암호화 릴레이, FD.io VPP & DPDK 10Gbps+ Software ASIC 엔진, 통합 Access Rule & VPN Group, 7대 산업별 실적용 사례.
 4. **문의 및 기술 지원 (Contact)**:
-   - 회사명: MightyLink (마이티링크)
+   - 회사명: MightyLink Lab.(마이티링크 랩)
    - 대표 이메일: `----@gmail.com`
    - 공식 웹사이트: `www.mightyconn.com`
 

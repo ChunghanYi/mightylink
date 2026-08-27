@@ -1,6 +1,6 @@
 export default {
   brand: {
-    name: 'MightyLink (마이티링크)',
+    name: 'MightyLink Lab.(마이티링크 랩)',
   },
   nav: {
     company: '회사 소개',
@@ -103,15 +103,16 @@ export default {
     inquiryDesc: '네트워크 환경 진단, 어플라이언스 실증(PoC), 기술 규격 검토 등 필요한 사항을 신속하게 안내해 드립니다.',
     company: '회사명',
     email: '공식 문의처',
-    sla: '영업일 기준 24시간 이내 신속 회신',
     sendEmail: '이메일로 도입 문의하기',
     docsTitle: '제품 소개서 및 기술 백서',
-    docsDesc: 'MightyLink 핵심 플랫폼의 상세 아키텍처와 기술 사양이 담긴 공식 백서(PDF)입니다.',
+    docsDesc: 'MightyLink Lab. 핵심 플랫폼의 상세 아키텍처와 기술 사양이 담긴 공식 백서(PDF)입니다.',
     docSg: 'MightyAISG 백서',
     docSgDesc: 'AI Security Gateway & ZTNA 기술 백서',
     docConnect: 'MightyConnect 백서',
     docConnectDesc: 'Mesh P2P & VPP 고속 패킷 릴레이 기술 백서',
     downloadPdf: 'PDF 다운로드',
+    docDownloads: '다운로드 {count}회',
+    downloading: '다운로드 중...',
   },
   footer: {
     trademark: '"WireGuard" 및 "WireGuard" 로고는 Jason A. Donenfeld의 등록 상표입니다.',

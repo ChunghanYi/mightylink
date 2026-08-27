@@ -18,8 +18,8 @@ function toggleLang() {
   <header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur transition-colors duration-300">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="#top" class="flex items-center gap-2.5">
-        <img :src="logoIcon" alt="MightyLink" class="h-10 md:h-11 w-auto object-contain" />
-        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white transition-colors">MightyLink</span>
+        <img :src="logoIcon" alt="MightyLink Lab." class="h-10 md:h-11 w-auto object-contain" />
+        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white transition-colors">MightyLink Lab.</span>
       </a>
 
       <div class="hidden items-center gap-8 md:flex">

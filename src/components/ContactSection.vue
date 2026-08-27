@@ -1,8 +1,63 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { DOC_KEYS, fetchDocCount, incrementDocCount, getLocalCount } from '../services/counter.js'
+
 const { t } = useI18n()
 
 const email = 'contact@mightyconn.com'
+
+// Download counts state (initialized with cached counts)
+const counts = ref({
+  [DOC_KEYS.AISG]: getLocalCount(DOC_KEYS.AISG),
+  [DOC_KEYS.CONNECT]: getLocalCount(DOC_KEYS.CONNECT)
+})
+
+const isDownloading = ref({
+  [DOC_KEYS.AISG]: false,
+  [DOC_KEYS.CONNECT]: false
+})
+
+const formatCount = (val) => {
+  if (typeof val !== 'number' || isNaN(val)) return '0'
+  return val.toLocaleString()
+}
+
+onMounted(async () => {
+  // Fetch latest counts from serverless Counter API
+  const [aisgCount, connectCount] = await Promise.all([
+    fetchDocCount(DOC_KEYS.AISG),
+    fetchDocCount(DOC_KEYS.CONNECT)
+  ])
+  counts.value[DOC_KEYS.AISG] = aisgCount
+  counts.value[DOC_KEYS.CONNECT] = connectCount
+})
+
+const handleDownload = async (docKey, filePath, fileName) => {
+  if (isDownloading.value[docKey]) return
+  isDownloading.value[docKey] = true
+
+  // Trigger file download immediately
+  const link = document.createElement('a')
+  link.href = filePath
+  link.download = fileName
+  link.target = '_blank'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+
+  // Increment count on serverless Counter API
+  try {
+    const updatedCount = await incrementDocCount(docKey)
+    counts.value[docKey] = updatedCount
+  } catch (err) {
+    console.error('Count update error:', err)
+  } finally {
+    setTimeout(() => {
+      isDownloading.value[docKey] = false
+    }, 600)
+  }
+}
 </script>
 
 <template>
@@ -29,15 +84,12 @@ const email = 'contact@mightyconn.com'
           class="flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 p-8 md:p-10 text-white shadow-xl lg:col-span-6"
         >
           <div>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start">
               <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/20 text-cyan-300 ring-1 ring-white/10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 px-3 py-1 text-xs font-semibold text-cyan-300">
-                ⚡ {{ t('contact.sla') }}
-              </span>
             </div>
 
             <h3 class="mt-6 text-2xl font-bold tracking-tight text-white break-keep">
@@ -111,18 +163,31 @@ const email = 'contact@mightyconn.com'
                   <div>
                     <h4 class="text-sm font-bold text-slate-900 dark:text-white">{{ t('contact.docSg') }}</h4>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{{ t('contact.docSgDesc') }}</p>
+                    <div class="mt-2.5 flex items-center gap-1.5">
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-pink-50 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 font-semibold border border-pink-200/70 dark:border-pink-800/60 text-[11px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {{ t('contact.docDownloads', { count: formatCount(counts[DOC_KEYS.AISG]) }) }}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <a
-                  href="./docs/Mighty_AISG_Security_Platform_v1.01.pdf"
-                  download
-                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-cyan-400 hover:text-blue-600 dark:hover:text-cyan-300 shadow-xs transition"
+                <button
+                  type="button"
+                  @click="handleDownload(DOC_KEYS.AISG, './docs/Mighty_AISG_Security_Platform_v1.01.pdf', 'Mighty_AISG_Security_Platform_v1.01.pdf')"
+                  :disabled="isDownloading[DOC_KEYS.AISG]"
+                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-cyan-400 hover:text-blue-600 dark:hover:text-cyan-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <svg v-if="!isDownloading[DOC_KEYS.AISG]" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  {{ t('contact.downloadPdf') }}
-                </a>
+                  <svg v-else class="animate-spin h-4 w-4 text-pink-600 dark:text-pink-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>{{ isDownloading[DOC_KEYS.AISG] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
+                </button>
               </div>
 
               <!-- Doc 2: MightyConnect -->
@@ -134,18 +199,31 @@ const email = 'contact@mightyconn.com'
                   <div>
                     <h4 class="text-sm font-bold text-slate-900 dark:text-white">{{ t('contact.docConnect') }}</h4>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{{ t('contact.docConnectDesc') }}</p>
+                    <div class="mt-2.5 flex items-center gap-1.5">
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 font-semibold border border-cyan-200/70 dark:border-cyan-800/60 text-[11px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {{ t('contact.docDownloads', { count: formatCount(counts[DOC_KEYS.CONNECT]) }) }}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <a
-                  href="./docs/Mighty_Connect_Security_Platform_v1.01.pdf"
-                  download
-                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs transition"
+                <button
+                  type="button"
+                  @click="handleDownload(DOC_KEYS.CONNECT, './docs/Mighty_Connect_Security_Platform_v1.01.pdf', 'Mighty_Connect_Security_Platform_v1.01.pdf')"
+                  :disabled="isDownloading[DOC_KEYS.CONNECT]"
+                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <svg v-if="!isDownloading[DOC_KEYS.CONNECT]" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  {{ t('contact.downloadPdf') }}
-                </a>
+                  <svg v-else class="animate-spin h-4 w-4 text-cyan-600 dark:text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>{{ isDownloading[DOC_KEYS.CONNECT] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
+                </button>
               </div>
             </div>
           </div>
