@@ -10,7 +10,7 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
     <Navbar />
     <main>
       <HeroSection />

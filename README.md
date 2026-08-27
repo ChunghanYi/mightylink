@@ -68,10 +68,13 @@ npm run build
 startup2/
 ├── docs/
 │   ├── HOMEPAGE_PLAN.md                 # 본 기획서
-│   ├── Mighty_AISG_Security_Platform_v1.00.pdf
-│   └── Mighty_Connect_Security_Platform_v1.0.pdf
+│   ├── Mighty_AISG_Security_Platform_v1.01.pdf
+│   └── Mighty_Connect_Security_Platform_v1.01.pdf
 ├── public/
-│   └── favicon.svg
+│   ├── docs/
+│   │   ├── Mighty_AISG_Security_Platform_v1.01.pdf
+│   │   └── Mighty_Connect_Security_Platform_v1.01.pdf
+│   └── favicon.png
 ├── src/
 │   ├── assets/main.css
 │   ├── components/

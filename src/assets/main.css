@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-slate-800 antialiased;
+  @apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100;
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   word-break: keep-all;
 }
 
 ::selection {
-  @apply bg-cyan-200 text-slate-900;
+  @apply bg-cyan-200 text-slate-900 dark:bg-cyan-500/30 dark:text-cyan-200;
 }
 
 /* Scroll-reveal (see src/directives/reveal.js) */
