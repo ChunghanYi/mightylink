@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-const email = 'chunghan.yi@gmail.com'
+const email = 'contact@mightyconn.com'
 </script>
 
 <template>

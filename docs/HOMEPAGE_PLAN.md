@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-26
 **Company:** MightyLink (마이티링크)
-**Contact:** chunghan.yi@gmail.com
+**Contact:** contact@mightyconn.com
 **Target:** Cloudflare Pages (SPA), 로컬 Apache2 사전 검증
 
 ## 0. 이 기획서의 목적
