@@ -45,7 +45,7 @@ const features = [
       <!-- Top Hero Card -->
       <div v-reveal class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-8 md:p-12 shadow-sm dark:shadow-black/40">
         <div class="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row">
-          <div class="max-w-2xl">
+          <div class="max-w-2xl flex-1">
             <div class="flex items-center gap-2">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-800">
                 {{ t('mightysg.tag') }}
@@ -66,15 +66,25 @@ const features = [
             </p>
           </div>
 
-          <div class="relative shrink-0">
-            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 blur-xl opacity-70"></div>
-            <img
-              :src="sgImg"
-              alt="MightyAISG Architecture"
-              class="relative h-36 w-36 rounded-2xl bg-white dark:bg-slate-800 object-contain p-4 shadow-md ring-1 ring-slate-200/80 dark:ring-slate-700 md:h-44 md:w-44"
-              loading="lazy"
-              decoding="async"
-            />
+          <!-- MightyAISG Visual Card (Unified Size) -->
+          <div class="relative shrink-0 w-full lg:w-72 xl:w-80">
+            <div class="overflow-hidden rounded-2xl border border-blue-500/30 dark:border-blue-500/40 bg-slate-950 shadow-lg shadow-blue-900/10 group">
+              <div class="relative h-44 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-1.5 overflow-hidden">
+                <img
+                  :src="sgImg"
+                  alt="MightyAISG Architecture"
+                  class="h-full w-full object-contain scale-115 transition-transform duration-300 group-hover:scale-120"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="px-3.5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs">
+                <span class="font-semibold text-cyan-300 flex items-center gap-1.5">
+                  <span class="h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+                  MightyAISG AI Gateway
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

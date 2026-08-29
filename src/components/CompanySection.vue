@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import ztnaImg from '../assets/images/mighty_ztna.jpg'
+import pqcImg from '../assets/images/pqc_shield.jpg'
 const { t } = useI18n()
 </script>
 
@@ -22,16 +23,37 @@ const { t } = useI18n()
 
     <!-- Company Mission & Philosophy Card -->
     <div v-reveal class="mt-16 rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-br from-slate-50 via-white to-blue-50/40 dark:from-slate-900/90 dark:via-slate-900/60 dark:to-blue-950/30 p-8 md:p-12 shadow-sm dark:shadow-black/40 transition-colors">
-      <div class="w-full">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100/80 dark:bg-blue-950 text-blue-700 dark:text-cyan-300 border border-blue-200/60 dark:border-blue-800/60">
-          {{ t('company.missionTag') }}
-        </span>
-        <h3 class="mt-3 text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-white break-keep">
-          {{ t('company.missionTitle') }}
-        </h3>
-        <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
-          {{ t('company.missionDesc') }}
-        </p>
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="flex-1">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100/80 dark:bg-blue-950 text-blue-700 dark:text-cyan-300 border border-blue-200/60 dark:border-blue-800/60">
+            {{ t('company.missionTag') }}
+          </span>
+          <h3 class="mt-3 text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-white break-keep">
+            {{ t('company.missionTitle') }}
+          </h3>
+          <p class="mt-3 text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
+            {{ t('company.missionDesc') }}
+          </p>
+        </div>
+
+        <!-- PQC Lattice Architecture Visual Card -->
+        <div class="relative shrink-0 w-full lg:w-72 xl:w-80">
+          <div class="overflow-hidden rounded-2xl border border-cyan-500/30 dark:border-cyan-500/40 bg-slate-950 shadow-lg shadow-cyan-900/10 group">
+            <img
+              :src="pqcImg"
+              alt="Post-Quantum Cryptography Architecture"
+              class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="px-3.5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="font-semibold text-cyan-300 flex items-center gap-1.5">
+                <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                MightyLink Lab.
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Core Competency Pillars (3 Key Strengths) -->
