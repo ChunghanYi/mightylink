@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import sgImg from '../assets/images/mightyaisg.png'
+import aisgImg from '../assets/images/mighty_aisg_light_theme.png'
 const { t } = useI18n()
 
 const features = [
@@ -123,7 +124,7 @@ const features = [
       <!-- MightyAISG AI Gateway Ecosystem Banner Card (Deep Indigo/Purple theme) -->
       <div v-reveal class="mt-10 rounded-3xl border border-indigo-900/40 bg-gradient-to-r from-slate-950 via-indigo-950 to-purple-950 p-8 md:p-10 text-white shadow-xl">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
-          <div class="max-w-2xl">
+          <div class="max-w-2xl flex-1">
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 mb-3">
               AI Security Gateway Architecture
             </div>
@@ -145,6 +146,19 @@ const features = [
               ⚡ Multi-LLM / MCP Gateway
             </span>
           </div>
+        </div>
+      </div>
+
+      <!-- MightyAISG Conceptual Architecture Diagram -->
+      <div v-reveal class="mt-8 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-3 sm:p-5 shadow-sm dark:shadow-black/40 transition-colors">
+        <div class="relative overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white flex items-center justify-center p-2 sm:p-4">
+          <img
+            :src="aisgImg"
+            alt="MightyAISG AI Security Gateway & ZTNA Architecture"
+            class="w-full h-auto max-h-[520px] object-contain rounded-xl"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 

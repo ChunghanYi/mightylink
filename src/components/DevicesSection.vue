@@ -37,11 +37,12 @@ const platformIcons = [
       </div>
 
       <!-- Main Showcase Grid (Appliance + Clients) -->
-      <div class="mt-16 grid gap-8 lg:grid-cols-12">
-        <!-- 1. Left Card: Security Box Appliance (5 cols) -->
+      <!-- Hardware Appliances Grid (MightyAISG/Connect & MightyXDDoS) -->
+      <div class="mt-16 grid gap-8 lg:grid-cols-2">
+        <!-- 1. Security Box Appliance for MightyAISG & MightyConnect -->
         <div
           v-reveal
-          class="flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900/90 dark:to-slate-900/70 p-8 shadow-sm dark:shadow-black/40 transition hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-md lg:col-span-5"
+          class="flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900/90 dark:to-slate-900/70 p-8 shadow-sm dark:shadow-black/40 transition hover:border-blue-300 dark:hover:border-blue-500/50 hover:shadow-md"
         >
           <div>
             <div class="flex items-center justify-between">
@@ -90,14 +91,73 @@ const platformIcons = [
           </div>
         </div>
 
-        <!-- 2. Right Card: Universal Multi-Platform Clients (7 cols) -->
+        <!-- 2. Security Box Appliance for MightyXDDoS -->
         <div
           v-reveal
-          style="transition-delay: 150ms"
-          class="flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900/90 dark:to-slate-900/70 p-8 shadow-sm dark:shadow-black/40 transition hover:border-cyan-300 dark:hover:border-cyan-500/50 hover:shadow-md lg:col-span-7"
+          style="transition-delay: 100ms"
+          class="flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900/90 dark:to-slate-900/70 p-8 shadow-sm dark:shadow-black/40 transition hover:border-rose-300 dark:hover:border-rose-500/50 hover:shadow-md"
         >
           <div>
             <div class="flex items-center justify-between">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-600 text-white shadow-md shadow-rose-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1 rounded-full bg-rose-50 dark:bg-rose-950 px-3 py-1 text-xs font-semibold text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+                {{ t('devices.xddosApplianceBadge') }}
+              </span>
+            </div>
+
+            <h3 class="mt-6 text-xl font-bold tracking-tight text-slate-900 dark:text-white break-keep">
+              {{ t('devices.xddosApplianceTitle') }}
+            </h3>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
+              {{ t('devices.xddosApplianceDesc') }}
+            </p>
+
+            <!-- Appliance Key Architecture Points -->
+            <div class="mt-6 space-y-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div class="flex items-start gap-3 text-xs md:text-sm text-slate-700 dark:text-slate-300">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold text-xs mt-0.5">✓</span>
+                <span class="break-keep">{{ t('devices.xddosAppliancePoint1') }}</span>
+              </div>
+              <div class="flex items-start gap-3 text-xs md:text-sm text-slate-700 dark:text-slate-300">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold text-xs mt-0.5">✓</span>
+                <span class="break-keep">{{ t('devices.xddosAppliancePoint2') }}</span>
+              </div>
+              <div class="flex items-start gap-3 text-xs md:text-sm text-slate-700 dark:text-slate-300">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold text-xs mt-0.5">✓</span>
+                <span class="break-keep">{{ t('devices.xddosAppliancePoint3') }}</span>
+              </div>
+              <div class="flex items-start gap-3 text-xs md:text-sm text-slate-700 dark:text-slate-300">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold text-xs mt-0.5">✓</span>
+                <span class="break-keep">{{ t('devices.xddosAppliancePoint4') }}</span>
+              </div>
+              <div class="flex items-start gap-3 text-xs md:text-sm text-slate-700 dark:text-slate-300">
+                <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold text-xs mt-0.5">✓</span>
+                <span class="break-keep">{{ t('devices.xddosAppliancePoint5') }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-2xl bg-rose-50/70 dark:bg-rose-950/40 border border-rose-100 dark:border-rose-900/60 p-4 text-center">
+            <span class="text-xs font-semibold text-rose-800 dark:text-rose-300 tracking-wide">
+              ⚡ Line-Rate 2.5G/10G/50G/100GbE Hardware
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Universal Multi-Platform Clients (Full-width Card) -->
+      <div
+        v-reveal
+        style="transition-delay: 150ms"
+        class="mt-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white to-slate-50/80 dark:from-slate-900/90 dark:to-slate-900/70 p-8 shadow-sm dark:shadow-black/40 transition hover:border-cyan-300 dark:hover:border-cyan-500/50 hover:shadow-md"
+      >
+        <div class="flex flex-col lg:flex-row items-start justify-between gap-8">
+          <div class="lg:w-5/12">
+            <div class="flex items-center gap-2">
               <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500 text-white shadow-md shadow-cyan-500/20">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -125,39 +185,39 @@ const platformIcons = [
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Platform Interactive List / Grid -->
-            <div class="mt-6 grid gap-3 sm:grid-cols-2">
-              <div
-                v-for="(item, idx) in items"
-                :key="item"
-                class="flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 px-4 py-3 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition"
-              >
-                <div class="flex items-center gap-3">
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" :d="platformIcons[idx] || platformIcons[0]" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span class="block text-xs font-bold text-slate-900 dark:text-white">{{ item }}</span>
-                    <span class="block text-[11px] text-slate-400 dark:text-slate-400">{{ itemDescs[idx] }}</span>
-                  </div>
+          <!-- Platform Interactive List / Grid -->
+          <div class="lg:w-7/12 w-full grid gap-3 sm:grid-cols-2">
+            <div
+              v-for="(item, idx) in items"
+              :key="item"
+              class="flex items-center justify-between rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 px-4 py-3 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition"
+            >
+              <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" :d="platformIcons[idx] || platformIcons[0]" />
+                  </svg>
                 </div>
-
-                <span
-                  v-if="idx === items.length - 1"
-                  class="rounded-full bg-pink-50 dark:bg-pink-950/80 px-2 py-0.5 text-[10px] font-bold text-pink-600 dark:text-pink-400 border border-pink-200 dark:border-pink-800"
-                >
-                  {{ t('devices.wip') }}
-                </span>
-                <span
-                  v-else
-                  class="rounded-full bg-emerald-50 dark:bg-emerald-950/80 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
-                >
-                  {{ t('devices.ready') }}
-                </span>
+                <div>
+                  <span class="block text-xs font-bold text-slate-900 dark:text-white">{{ item }}</span>
+                  <span class="block text-[11px] text-slate-400 dark:text-slate-400">{{ itemDescs[idx] }}</span>
+                </div>
               </div>
+
+              <span
+                v-if="idx === items.length - 1"
+                class="rounded-full bg-pink-50 dark:bg-pink-950/80 px-2 py-0.5 text-[10px] font-bold text-pink-600 dark:text-pink-400 border border-pink-200 dark:border-pink-800"
+              >
+                {{ t('devices.wip') }}
+              </span>
+              <span
+                v-else
+                class="rounded-full bg-emerald-50 dark:bg-emerald-950/80 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
+              >
+                {{ t('devices.ready') }}
+              </span>
             </div>
           </div>
         </div>

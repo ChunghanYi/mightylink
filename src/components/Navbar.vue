@@ -26,6 +26,7 @@ function toggleLang() {
         <a href="#company" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.company') }}</a>
         <a href="#mightysg" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.mightysg') }}</a>
         <a href="#mightyconnect" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.mightyconnect') }}</a>
+        <a href="#mightyxddos" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.mightyxddos') }}</a>
         <a href="#devices" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.devices') }}</a>
         <a href="#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">{{ t('nav.contact') }}</a>
       </div>
@@ -83,6 +84,7 @@ function toggleLang() {
       <a href="#company" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.company') }}</a>
       <a href="#mightysg" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.mightysg') }}</a>
       <a href="#mightyconnect" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.mightyconnect') }}</a>
+      <a href="#mightyxddos" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.mightyxddos') }}</a>
       <a href="#devices" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.devices') }}</a>
       <a href="#contact" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" @click="open = false">{{ t('nav.contact') }}</a>
     </div>

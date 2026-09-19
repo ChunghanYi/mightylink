@@ -10,12 +10,14 @@ const email = 'contact@mightyconn.com'
 // Download counts state (initialized with cached counts)
 const counts = ref({
   [DOC_KEYS.AISG]: getLocalCount(DOC_KEYS.AISG),
-  [DOC_KEYS.CONNECT]: getLocalCount(DOC_KEYS.CONNECT)
+  [DOC_KEYS.CONNECT]: getLocalCount(DOC_KEYS.CONNECT),
+  [DOC_KEYS.XDDOS]: getLocalCount(DOC_KEYS.XDDOS),
 })
 
 const isDownloading = ref({
   [DOC_KEYS.AISG]: false,
-  [DOC_KEYS.CONNECT]: false
+  [DOC_KEYS.CONNECT]: false,
+  [DOC_KEYS.XDDOS]: false,
 })
 
 const formatCount = (val) => {
@@ -25,12 +27,14 @@ const formatCount = (val) => {
 
 onMounted(async () => {
   // Fetch latest counts from serverless Counter API
-  const [aisgCount, connectCount] = await Promise.all([
+  const [aisgCount, connectCount, xddosCount] = await Promise.all([
     fetchDocCount(DOC_KEYS.AISG),
-    fetchDocCount(DOC_KEYS.CONNECT)
+    fetchDocCount(DOC_KEYS.CONNECT),
+    fetchDocCount(DOC_KEYS.XDDOS),
   ])
   counts.value[DOC_KEYS.AISG] = aisgCount
   counts.value[DOC_KEYS.CONNECT] = connectCount
+  counts.value[DOC_KEYS.XDDOS] = xddosCount
 })
 
 const handleDownload = async (docKey, filePath, fileName) => {
@@ -223,6 +227,42 @@ const handleDownload = async (docKey, filePath, fileName) => {
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                   <span>{{ isDownloading[DOC_KEYS.CONNECT] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
+                </button>
+              </div>
+
+              <!-- Doc 3: MightyXDDoS -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/60 p-5 hover:border-rose-300 dark:hover:border-rose-500/50 transition">
+                <div class="flex items-start gap-3.5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 font-bold text-xs">
+                    PDF
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">{{ t('contact.docXDDoS') }}</h4>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{{ t('contact.docXDDoSDesc') }}</p>
+                    <div class="mt-2.5 flex items-center gap-1.5">
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 font-semibold border border-rose-200/70 dark:border-rose-800/60 text-[11px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {{ t('contact.docDownloads', { count: formatCount(counts[DOC_KEYS.XDDOS]) }) }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  @click="handleDownload(DOC_KEYS.XDDOS, './docs/Mighty_DDoS_Mitigator_v0.94.pdf', 'Mighty_DDoS_Mitigator_v0.94.pdf')"
+                  :disabled="isDownloading[DOC_KEYS.XDDOS]"
+                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-rose-400 dark:hover:border-rose-400 hover:text-rose-600 dark:hover:text-rose-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
+                >
+                  <svg v-if="!isDownloading[DOC_KEYS.XDDOS]" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <svg v-else class="animate-spin h-4 w-4 text-rose-600 dark:text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>{{ isDownloading[DOC_KEYS.XDDOS] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
                 </button>
               </div>
             </div>

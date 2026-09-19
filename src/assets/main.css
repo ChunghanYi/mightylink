@@ -35,25 +35,59 @@ body {
   }
 }
 
-/* Hero mesh background */
-@keyframes mesh-pulse {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.25); }
+/* Dynamic Hero Background - Cyber Grid, Aurora Glow & High-Speed Packet Streams */
+.hero-cyber-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 32%, #000 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 32%, #000 45%, transparent 100%);
 }
-@keyframes mesh-flow {
-  to { stroke-dashoffset: -200; }
+
+:where(.dark, .dark *) .hero-cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
 }
-.mesh-node {
-  animation: mesh-pulse 4s ease-in-out infinite;
+
+@keyframes aurora-glow {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: translate(-50%, 25px) scale(1.15);
+    opacity: 0.95;
+  }
 }
-.mesh-line {
-  stroke-dasharray: 6 10;
-  animation: mesh-flow 12s linear infinite;
+
+@keyframes aurora-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.12); }
+}
+
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(1.15); }
+}
+
+.animate-aurora-glow {
+  animation: aurora-glow 9s ease-in-out infinite;
+}
+.animate-aurora-float-1 {
+  animation: aurora-float-1 13s ease-in-out infinite;
+}
+.animate-aurora-float-2 {
+  animation: aurora-float-2 15s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mesh-node,
-  .mesh-line {
+  .animate-aurora-glow,
+  .animate-aurora-float-1,
+  .animate-aurora-float-2 {
     animation: none;
   }
 }

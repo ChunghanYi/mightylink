@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection.vue'
 import CompanySection from './components/CompanySection.vue'
 import MightySGSection from './components/MightySGSection.vue'
 import MightyConnectSection from './components/MightyConnectSection.vue'
+import MightyXDDoSSection from './components/MightyXDDoSSection.vue'
 import DevicesSection from './components/DevicesSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import Footer from './components/Footer.vue'
@@ -17,6 +18,7 @@ import Footer from './components/Footer.vue'
       <CompanySection />
       <MightySGSection />
       <MightyConnectSection />
+      <MightyXDDoSSection />
       <DevicesSection />
       <ContactSection />
     </main>
