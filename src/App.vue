@@ -6,6 +6,7 @@ import MightySGSection from './components/MightySGSection.vue'
 import MightyConnectSection from './components/MightyConnectSection.vue'
 import MightyXDDoSSection from './components/MightyXDDoSSection.vue'
 import DevicesSection from './components/DevicesSection.vue'
+import BlogSection from './components/BlogSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import Footer from './components/Footer.vue'
 </script>
@@ -20,6 +21,7 @@ import Footer from './components/Footer.vue'
       <MightyConnectSection />
       <MightyXDDoSSection />
       <DevicesSection />
+      <BlogSection />
       <ContactSection />
     </main>
     <Footer />
