@@ -53,6 +53,22 @@ const features = [
     textColor: 'text-purple-600 dark:text-purple-400',
     tagBg: 'bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-300 border-purple-200/80 dark:border-purple-800',
   },
+  {
+    key: 'feat7',
+    tag: 'Slow Connection Guard',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    bgColor: 'bg-teal-50 dark:bg-teal-950/80',
+    textColor: 'text-teal-600 dark:text-teal-400',
+    tagBg: 'bg-teal-50 dark:bg-teal-950 text-teal-700 dark:text-teal-300 border-teal-200/80 dark:border-teal-800',
+  },
+  {
+    key: 'feat8',
+    tag: 'Server Health Detection',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    bgColor: 'bg-blue-50 dark:bg-blue-950/80',
+    textColor: 'text-blue-600 dark:text-cyan-400',
+    tagBg: 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-cyan-300 border-blue-200/80 dark:border-blue-800',
+  },
 ]
 </script>
 
@@ -111,7 +127,7 @@ const features = [
         </div>
       </div>
 
-      <!-- 6 Core Feature Cards Grid -->
+      <!-- Core Feature Cards Grid -->
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(item, idx) in features"
