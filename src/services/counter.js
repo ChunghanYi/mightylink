@@ -9,9 +9,9 @@ const PRIMARY_API = 'https://abacus.jasoncameron.dev'
 const STORAGE_KEY_PREFIX = 'mightylink_doc_count_'
 
 export const DOC_KEYS = {
-  AISG: 'doc_aisg',
-  CONNECT: 'doc_connect',
-  XDDOS: 'doc_xddos'
+  XDDOS: 'doc_xddos',
+  ADC: 'doc_adc',
+  CONNECT: 'doc_connect'
 }
 
 /**
@@ -39,7 +39,7 @@ export function setLocalCount(docKey, count) {
 
 /**
  * Fetch the current download count for a given document key
- * @param {string} docKey - e.g. 'doc_aisg', 'doc_connect'
+ * @param {string} docKey - e.g. 'doc_xddos', 'doc_adc', 'doc_connect'
  * @returns {Promise<number>}
  */
 export async function fetchDocCount(docKey) {
@@ -69,7 +69,7 @@ export async function fetchDocCount(docKey) {
 
 /**
  * Increment the download count for a given document key
- * @param {string} docKey - e.g. 'doc_aisg', 'doc_connect'
+ * @param {string} docKey - e.g. 'doc_xddos', 'doc_adc', 'doc_connect'
  * @returns {Promise<number>} - New count
  */
 export async function incrementDocCount(docKey) {

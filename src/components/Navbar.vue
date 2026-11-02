@@ -15,13 +15,22 @@ let closeTimer = null
 
 const productItems = [
   {
-    id: 'mightysg',
-    nameKey: 'nav.mightysg',
-    descKey: 'nav.mightysgDesc',
-    href: '#mightysg',
-    badge: 'AI Gateway',
-    colorClasses: 'bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-cyan-300',
-    iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+    id: 'mightyxddos',
+    nameKey: 'nav.mightyxddos',
+    descKey: 'nav.mightyxddosDesc',
+    href: '#mightyxddos',
+    badge: 'DDoS + L2 Bridge',
+    colorClasses: 'bg-rose-100 text-rose-600 dark:bg-rose-900/40 dark:text-rose-400',
+    iconPath: 'M13 10V3L4 14h7v7l9-11h-7z'
+  },
+  {
+    id: 'mightyadc',
+    nameKey: 'nav.mightyadc',
+    descKey: 'nav.mightyadcDesc',
+    href: '#mightyadc',
+    badge: 'DDoS + L4/L7 LB + AI GW',
+    colorClasses: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400',
+    iconPath: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'
   },
   {
     id: 'mightyconnect',
@@ -29,17 +38,8 @@ const productItems = [
     descKey: 'nav.mightyconnectDesc',
     href: '#mightyconnect',
     badge: 'P2P Network',
-    colorClasses: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400',
+    colorClasses: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/40 dark:text-cyan-400',
     iconPath: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
-  },
-  {
-    id: 'mightyxddos',
-    nameKey: 'nav.mightyxddos',
-    descKey: 'nav.mightyxddosDesc',
-    href: '#mightyxddos',
-    badge: 'DDoS Defense',
-    colorClasses: 'bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-400',
-    iconPath: 'M13 10V3L4 14h7v7l9-11h-7z'
   }
 ]
 
@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
   <header class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur transition-colors duration-300">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="#top" @click="handleNavClick" class="flex shrink-0 items-center gap-2.5">
-        <img :src="logoIcon" alt="MightyLink Lab." class="h-10 md:h-11 w-auto object-contain" />
+        <img :src="logoIcon" alt="MightyLink Lab." class="h-10 md:h-11 w-auto object-contain rounded-lg" />
         <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white transition-colors whitespace-nowrap">MightyLink Lab.</span>
       </a>
 
@@ -188,10 +188,7 @@ onBeforeUnmount(() => {
         </div>
 
         <a href="#devices" @click="handleNavClick" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors whitespace-nowrap">{{ t('nav.devices') }}</a>
-        <a href="#blog" @click="handleNavClick" class="text-sm font-semibold text-blue-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-300 transition-colors flex items-center gap-1.5 whitespace-nowrap">
-          <span>{{ t('nav.blog') }}</span>
-          <span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-cyan-900/60 px-1.5 py-0.5 text-[10px] font-bold text-blue-700 dark:text-cyan-300">NEW</span>
-        </a>
+        <a href="#blog" @click="handleNavClick" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors whitespace-nowrap">{{ t('nav.blog') }}</a>
       </div>
 
       <div class="flex items-center gap-2.5 sm:gap-3">
@@ -282,10 +279,7 @@ onBeforeUnmount(() => {
       </div>
 
       <a href="#devices" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white whitespace-nowrap" @click="handleNavClick">{{ t('nav.devices') }}</a>
-      <a href="#blog" class="py-2 text-sm font-semibold text-blue-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-300 flex items-center justify-between whitespace-nowrap" @click="handleNavClick">
-        <span>{{ t('nav.blog') }}</span>
-        <span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-cyan-900/60 px-1.5 py-0.5 text-[10px] font-bold text-blue-700 dark:text-cyan-300">NEW</span>
-      </a>
+      <a href="#blog" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white whitespace-nowrap" @click="handleNavClick">{{ t('nav.blog') }}</a>
       <a href="#contact" class="py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white whitespace-nowrap" @click="handleNavClick">{{ t('nav.contact') }}</a>
     </div>
   </header>

@@ -169,28 +169,33 @@ onUnmounted(() => {
         {{ t('hero.desc') }}
       </p>
 
-      <!-- 3 Core Technological Pillars -->
-      <div class="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-3 sm:gap-4">
+      <!-- 4 Core Technological Pillars -->
+      <div class="mx-auto mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-3 sm:gap-3.5">
         <div class="inline-flex items-center gap-2.5 rounded-full border border-blue-200/90 dark:border-blue-900/60 bg-white/80 dark:bg-slate-900/80 px-4 py-2 text-xs sm:text-sm font-medium shadow-2xs backdrop-blur-xs transition hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-xs">
           <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600 text-[11px] font-bold text-white shadow-2xs">1</span>
           <span class="font-bold text-blue-600 dark:text-cyan-400">{{ t('hero.pillar1Tech') }}</span>
           <span class="text-slate-600 dark:text-slate-300">{{ t('hero.pillar1Label') }}</span>
         </div>
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-cyan-200/90 dark:border-cyan-900/60 bg-white/80 dark:bg-slate-900/80 px-4 py-2 text-xs sm:text-sm font-medium shadow-2xs backdrop-blur-xs transition hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-xs">
-          <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-[11px] font-bold text-white shadow-2xs">2</span>
-          <span>
-            <span class="font-bold text-cyan-600 dark:text-cyan-400">{{ t('hero.pillar2Tech') }}</span><span class="font-medium text-slate-600 dark:text-slate-300">{{ t('hero.pillar2Label') }}</span>
-          </span>
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-rose-200/90 dark:border-rose-900/60 bg-white/80 dark:bg-slate-900/80 px-4 py-2 text-xs sm:text-sm font-medium shadow-2xs backdrop-blur-xs transition hover:border-rose-400 dark:hover:border-rose-500 hover:shadow-xs">
+          <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-600 text-[11px] font-bold text-white shadow-2xs">2</span>
+          <span class="font-bold text-rose-600 dark:text-rose-400">{{ t('hero.pillar2Tech') }}</span>
+          <span class="text-slate-600 dark:text-slate-300">{{ t('hero.pillar2Label') }}</span>
         </div>
         <div class="inline-flex items-center gap-2.5 rounded-full border border-indigo-200/90 dark:border-indigo-900/60 bg-white/80 dark:bg-slate-900/80 px-4 py-2 text-xs sm:text-sm font-medium shadow-2xs backdrop-blur-xs transition hover:border-indigo-400 dark:hover:border-indigo-500 hover:shadow-xs">
           <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-[11px] font-bold text-white shadow-2xs">3</span>
           <span class="font-bold text-indigo-600 dark:text-indigo-400">{{ t('hero.pillar3Tech') }}</span>
           <span class="text-slate-600 dark:text-slate-300">{{ t('hero.pillar3Label') }}</span>
         </div>
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-cyan-200/90 dark:border-cyan-900/60 bg-white/80 dark:bg-slate-900/80 px-4 py-2 text-xs sm:text-sm font-medium shadow-2xs backdrop-blur-xs transition hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-xs">
+          <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-[11px] font-bold text-white shadow-2xs">4</span>
+          <span>
+            <span class="font-bold text-cyan-600 dark:text-cyan-400">{{ t('hero.pillar4Tech') }}</span><span class="font-medium text-slate-600 dark:text-slate-300">{{ t('hero.pillar4Label') }}</span>
+          </span>
+        </div>
       </div>
 
       <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <a href="#mightysg" class="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-blue-950 hover:opacity-90 active:scale-95 transition-all">
+        <a href="#mightyxddos" class="rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-blue-950 hover:opacity-90 active:scale-95 transition-all">
           {{ t('hero.ctaProducts') }}
         </a>
         <a href="#contact" class="rounded-full border border-slate-300 dark:border-slate-700 bg-white/40 dark:bg-slate-900/60 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-cyan-400 hover:text-blue-600 dark:hover:text-cyan-300 active:scale-95 transition-all">
@@ -198,63 +203,63 @@ onUnmounted(() => {
         </a>
       </div>
 
-      <div class="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-3">
-        <!-- Series 01: MightyAISG (AI Security Gateway) - Blue/Indigo theme -->
-        <a
-          href="#mightysg"
-          class="group relative flex flex-col justify-between rounded-2xl border border-blue-200/90 dark:border-blue-900/60 bg-gradient-to-br from-blue-50/90 via-indigo-50/40 to-blue-100/50 dark:from-blue-950/50 dark:via-slate-900/90 dark:to-indigo-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1"
-        >
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-widest text-blue-600 dark:text-blue-400">MightyAISG</span>
-              <span class="rounded-full border border-blue-200/80 dark:border-blue-800/80 bg-blue-100/90 dark:bg-blue-950/90 px-2 py-0.5 text-[10px] font-bold text-blue-700 dark:text-blue-300">Series 01</span>
-            </div>
-            <p class="mt-2 text-lg font-bold text-blue-700 dark:text-blue-300">{{ t('hero.sgTag') }}</p>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.sgDesc') }}</p>
-          </div>
-          <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400">
-            <span>{{ t('hero.viewProduct') }}</span>
-            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </a>
-
-        <!-- Series 02: MightyConnect (P2P Mesh Network) - Cyan/Teal theme -->
-        <a
-          href="#mightyconnect"
-          class="group relative flex flex-col justify-between rounded-2xl border border-cyan-200/90 dark:border-cyan-900/60 bg-gradient-to-br from-cyan-50/90 via-teal-50/40 to-emerald-100/50 dark:from-cyan-950/50 dark:via-slate-900/90 dark:to-teal-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1"
-        >
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-widest text-cyan-600 dark:text-cyan-400">MightyConnect</span>
-              <span class="rounded-full border border-cyan-200/80 dark:border-cyan-800/80 bg-cyan-100/90 dark:bg-cyan-950/90 px-2 py-0.5 text-[10px] font-bold text-cyan-700 dark:text-cyan-300">Series 02</span>
-            </div>
-            <p class="mt-2 text-lg font-bold text-teal-700 dark:text-teal-300">{{ t('hero.connectTag') }}</p>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.connectDesc') }}</p>
-          </div>
-          <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400">
-            <span>{{ t('hero.viewProduct') }}</span>
-            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </a>
-
-        <!-- Series 03: MightyXDDoS (Inline DDoS Mitigator) - Rose/Amber theme -->
+      <div class="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Series 01: MightyXDDoS BR (DDoS Mitigator + L2 Bridge) - Rose/Amber theme -->
         <a
           href="#mightyxddos"
           class="group relative flex flex-col justify-between rounded-2xl border border-rose-200/90 dark:border-rose-900/60 bg-gradient-to-br from-rose-50/90 via-pink-50/40 to-amber-100/50 dark:from-rose-950/50 dark:via-slate-900/90 dark:to-amber-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-rose-400 dark:hover:border-rose-500 hover:shadow-lg hover:shadow-rose-500/10 hover:-translate-y-1"
         >
           <div>
             <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-widest text-rose-600 dark:text-rose-400">MightyXDDoS</span>
-              <span class="rounded-full border border-rose-200/80 dark:border-rose-800/80 bg-rose-100/90 dark:bg-rose-950/90 px-2 py-0.5 text-[10px] font-bold text-rose-700 dark:text-rose-300">Series 03</span>
+              <span class="text-xs font-extrabold tracking-widest text-rose-600 dark:text-rose-400">MightyXDDoS BR</span>
+              <span class="rounded-full border border-rose-200/80 dark:border-rose-800/80 bg-rose-100/90 dark:bg-rose-950/90 px-2 py-0.5 text-[10px] font-bold text-rose-700 dark:text-rose-300">Series 01</span>
             </div>
-            <p class="mt-2 text-lg font-bold text-rose-700 dark:text-rose-300">{{ t('hero.xddosTag') }}</p>
-            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.xddosDesc') }}</p>
+            <p class="mt-2 text-base font-bold text-rose-700 dark:text-rose-300">{{ t('hero.xddosTag') }}</p>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.xddosDesc') }}</p>
           </div>
           <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-rose-600 dark:text-rose-400">
+            <span>{{ t('hero.viewProduct') }}</span>
+            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Series 02: MightyADC (DDoS Mitigator + L4/L7 Load Balancer + AI Gateway) - Emerald/Indigo theme -->
+        <a
+          href="#mightyadc"
+          class="group relative flex flex-col justify-between rounded-2xl border border-emerald-200/90 dark:border-emerald-900/60 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-indigo-100/50 dark:from-emerald-950/50 dark:via-slate-900/90 dark:to-indigo-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1"
+        >
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold tracking-widest text-emerald-600 dark:text-emerald-400">MightyADC</span>
+              <span class="rounded-full border border-emerald-200/80 dark:border-emerald-800/80 bg-emerald-100/90 dark:bg-emerald-950/90 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-300">Series 02</span>
+            </div>
+            <p class="mt-2 text-base font-bold text-emerald-700 dark:text-emerald-300">{{ t('hero.adcTag') }}</p>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.adcDesc') }}</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+            <span>{{ t('hero.viewProduct') }}</span>
+            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Series 03: MightyConnect (P2P Mesh Network) - Cyan/Teal theme -->
+        <a
+          href="#mightyconnect"
+          class="group relative flex flex-col justify-between rounded-2xl border border-cyan-200/90 dark:border-cyan-900/60 bg-gradient-to-br from-cyan-50/90 via-teal-50/40 to-emerald-100/50 dark:from-cyan-950/50 dark:via-slate-900/90 dark:to-teal-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 sm:col-span-2 lg:col-span-1"
+        >
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold tracking-widest text-cyan-600 dark:text-cyan-400">MightyConnect</span>
+              <span class="rounded-full border border-cyan-200/80 dark:border-cyan-800/80 bg-cyan-100/90 dark:bg-cyan-950/90 px-2 py-0.5 text-[10px] font-bold text-cyan-700 dark:text-cyan-300">Series 03</span>
+            </div>
+            <p class="mt-2 text-base font-bold text-teal-700 dark:text-teal-300">{{ t('hero.connectTag') }}</p>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.connectDesc') }}</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400">
             <span>{{ t('hero.viewProduct') }}</span>
             <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

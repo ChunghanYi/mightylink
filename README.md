@@ -15,8 +15,9 @@ Vue 3, Vite, Tailwind CSS, Vue I18n을 기반으로 구축된 단일 페이지 �
    - 글래스모피즘·네온 등 과한 이펙트 배제, 여백과 타이포그래피 중심의 담백한 엔터프라이즈 스타일
    - 모바일/태블릿/데스크톱 반응형
 3. **핵심 제품 라인업 상세 소개**:
-   - **MightySG AI Security Platform**: WireGuard + PQC(ML-KEM 1024) + 2FA, eBPF TC/XDP 커널 ZTNA, agentgateway L7 AI Proxy (CEL Guardrails, DLP, MCP 다중화, A2A 에이전트 통신).
-   - **MightyConnect P2P Security Platform**: Mesh P2P Direct Connect (NAT Hole Punching), WERP E2E 암호화 릴레이, FD.io VPP & DPDK 10Gbps+ Software ASIC 엔진, 통합 Access Rule & VPN Group, 7대 산업별 실적용 사례.
+   - **MightyXDDoS BR (DDoS Mitigator + L2 Bridge)**: FD.io VPP & eBPF XDP 기반 투명한 Bump-in-the-Wire 인라인 DDoS 방어 브릿지.
+   - **MightyADC (DDoS Mitigator + L4/L7 LB + AI Gateway)**: 커널 eBPF XDP 선제 DDoS 방어, 6-Mode L4 Maglev & HAProxy L7 로드밸런서, 멀티 LLM·MCP·A2A 통합 AI 게이트웨이.
+   - **MightyConnect (P2P Security Platform)**: WireGuard + PQC(ML-KEM) + 2FA, Mesh P2P Direct Connect (NAT Hole Punching), WERP E2E 암호화 릴레이, FD.io VPP & DPDK 고속 패킷 중계, 통합 Access Rule & VPN Group.
 4. **문의 및 기술 지원 (Contact)**:
    - 회사명: MightyLink Lab.(마이티링크 랩)
    - 대표 이메일: `----@gmail.com`
@@ -65,14 +66,11 @@ npm run build
 
 ## 📂 디렉토리 구조
 ```text
-startup2/
-├── docs/
-│   ├── HOMEPAGE_PLAN.md                 # 본 기획서
-│   ├── Mighty_AISG_Security_Platform_v1.01.pdf
-│   └── Mighty_Connect_Security_Platform_v1.01.pdf
+mightylink/
 ├── public/
 │   ├── docs/
-│   │   ├── Mighty_AISG_Security_Platform_v1.01.pdf
+│   │   ├── Mighty_DDoS_Mitigator_v1.02.pdf
+│   │   ├── Mighty_ADC_v0.93.pdf
 │   │   └── Mighty_Connect_Security_Platform_v1.01.pdf
 │   └── favicon.png
 ├── src/
@@ -81,16 +79,21 @@ startup2/
 │   │   ├── Navbar.vue
 │   │   ├── HeroSection.vue
 │   │   ├── CompanySection.vue
-│   │   ├── MightySGSection.vue
+│   │   ├── MightyXDDoSSection.vue
+│   │   ├── MightyADCSection.vue
 │   │   ├── MightyConnectSection.vue
-│   │   └── ContactSection.vue
+│   │   ├── DevicesSection.vue
+│   │   ├── BlogSection.vue
+│   │   ├── ContactSection.vue
+│   │   └── Footer.vue
 │   ├── locales/{ko,en}.js
+│   ├── services/counter.js
 │   ├── i18n.js
+│   ├── theme.js
 │   ├── App.vue
 │   └── main.js
 ├── deploy-local.sh                      # 로컬 Apache2 배포 스크립트
 ├── index.html
 ├── package.json
-├── tailwind.config.js
 └── vite.config.js
 ```

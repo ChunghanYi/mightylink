@@ -77,36 +77,38 @@ const features = [
     <div class="mx-auto max-w-6xl px-6">
       <!-- Top Hero Card -->
       <div v-reveal class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-8 md:p-12 shadow-sm dark:shadow-black/40">
-        <div class="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row">
-          <div class="max-w-2xl flex-1">
-            <div class="flex items-center gap-2">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-50 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
-                {{ t('mightyxddos.tag') }}
-              </span>
-              <span class="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:text-slate-300">
-                Inline Security Bridge
-              </span>
-            </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-50 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+              {{ t('mightyxddos.tag') }}
+            </span>
+            <span class="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:text-slate-300">
+              {{ t('mightyxddos.badge') }}
+            </span>
+          </div>
 
-            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              <span class="text-pink-600 dark:text-pink-400">{{ t('mightyxddos.title') }}</span>
-              <span class="text-slate-300 dark:text-slate-700 mx-2 font-light">/</span>
-              <span>{{ t('mightyxddos.subtitle') }}</span>
-            </h2>
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl lg:text-4xl lg:whitespace-nowrap">
+            <span class="text-pink-600 dark:text-pink-400">{{ t('mightyxddos.title') }}</span>
+            <span class="text-slate-300 dark:text-slate-700 mx-2 font-light">/</span>
+            <span>{{ t('mightyxddos.subtitle') }}</span>
+          </h2>
 
-            <div class="mt-2 text-sm font-bold text-rose-600 dark:text-rose-400 tracking-wide">
-              ⚡ {{ t('mightyxddos.slogan') }}
-            </div>
+          <div class="mt-2 text-sm font-bold text-rose-600 dark:text-rose-400 tracking-wide">
+            ⚡ {{ t('mightyxddos.slogan') }}
+          </div>
+        </div>
 
-            <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
+        <div class="mt-6 flex flex-col-reverse items-center justify-between gap-8 lg:flex-row">
+          <div class="flex-1">
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
               {{ t('mightyxddos.desc') }}
             </p>
           </div>
 
-          <!-- MightyXDDoS Visual Card (Unified Size matching AISG and Connect) -->
-          <div class="relative shrink-0 w-full lg:w-72 xl:w-80">
-            <div class="overflow-hidden rounded-2xl border border-rose-500/30 dark:border-rose-500/40 bg-slate-950 shadow-lg shadow-rose-900/10 group">
-              <div class="relative h-44 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-3 overflow-hidden">
+          <!-- MightyXDDoS Visual Card (2/3 Compact Unified Size) -->
+          <div class="relative shrink-0 w-48 sm:w-52 lg:w-48 xl:w-52">
+            <div class="overflow-hidden rounded-xl border border-rose-500/30 dark:border-rose-500/40 bg-slate-950 shadow-md shadow-rose-900/10 group">
+              <div class="relative h-28 sm:h-30 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-2 overflow-hidden">
                 <img
                   :src="xddosImg"
                   alt="MightyXDDoS Mitigator"
@@ -115,12 +117,12 @@ const features = [
                   decoding="async"
                 />
               </div>
-              <div class="px-3.5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs">
-                <span class="font-semibold text-rose-300 flex items-center gap-1.5">
-                  <span class="h-2 w-2 rounded-full bg-rose-500 animate-pulse"></span>
-                  MightyXDDoS Mitigator
+              <div class="px-2.5 py-1.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-[11px]">
+                <span class="font-semibold text-rose-300 flex items-center gap-1">
+                  <span class="h-1.5 w-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                  MightyXDDoS BR
                 </span>
-                <span class="text-[11px] text-slate-400 font-mono">VPP & XDP Bridge</span>
+                <span class="text-[10px] text-slate-400 font-mono">VPP/XDP</span>
               </div>
             </div>
           </div>

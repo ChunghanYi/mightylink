@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import pqcImg from '../assets/images/pqc_shield.jpg'
+import logoIcon from '../assets/images/logo-icon.png'
 import companyLabImg from '../assets/images/company_lab_light_theme.png'
 const { t } = useI18n()
 </script>
@@ -22,16 +22,18 @@ const { t } = useI18n()
           </p>
         </div>
 
-        <!-- PQC Lattice Architecture Visual Card -->
+        <!-- MightyLink Lab Visual Card -->
         <div class="relative shrink-0 w-full lg:w-72 xl:w-80">
           <div class="overflow-hidden rounded-2xl border border-cyan-500/30 dark:border-cyan-500/40 bg-slate-950 shadow-lg shadow-cyan-900/10 group">
-            <img
-              :src="pqcImg"
-              alt="Post-Quantum Cryptography Architecture"
-              class="w-full h-44 object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-              decoding="async"
-            />
+            <div class="relative h-44 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-2 overflow-hidden">
+              <img
+                :src="logoIcon"
+                alt="MightyLink Lab. Logo"
+                class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <div class="px-3.5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs">
               <span class="font-semibold text-cyan-300 flex items-center gap-1.5">
                 <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -59,17 +61,17 @@ const { t } = useI18n()
           </div>
         </div>
 
-        <!-- Pillar 2: Quantum Security -->
-        <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 shadow-sm transition hover:border-cyan-300 dark:hover:border-cyan-500/50 hover:shadow-md flex flex-col justify-between">
+        <!-- Pillar 2: DDoS Defense -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 shadow-sm transition hover:border-rose-300 dark:hover:border-rose-500/50 hover:shadow-md flex flex-col justify-between">
           <div>
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 mb-4">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h4 class="text-base font-bold text-slate-900 dark:text-white">{{ t('company.pillar2Title') }}</h4>
+            <h4 class="text-base font-bold text-slate-900 dark:text-white">{{ t('company.pillar4Title') }}</h4>
             <p class="mt-2 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed break-keep">
-              {{ t('company.pillar2Desc') }}
+              {{ t('company.pillar4Desc') }}
             </p>
           </div>
         </div>
@@ -89,17 +91,17 @@ const { t } = useI18n()
           </div>
         </div>
 
-        <!-- Pillar 4: DDoS Defense -->
-        <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 shadow-sm transition hover:border-rose-300 dark:hover:border-rose-500/50 hover:shadow-md flex flex-col justify-between">
+        <!-- Pillar 4: Quantum Security -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-6 shadow-sm transition hover:border-cyan-300 dark:hover:border-cyan-500/50 hover:shadow-md flex flex-col justify-between">
           <div>
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 mb-4">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h4 class="text-base font-bold text-slate-900 dark:text-white">{{ t('company.pillar4Title') }}</h4>
+            <h4 class="text-base font-bold text-slate-900 dark:text-white">{{ t('company.pillar2Title') }}</h4>
             <p class="mt-2 text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed break-keep">
-              {{ t('company.pillar4Desc') }}
+              {{ t('company.pillar2Desc') }}
             </p>
           </div>
         </div>

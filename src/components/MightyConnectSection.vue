@@ -57,36 +57,38 @@ const features = [
 </script>
 
 <template>
-  <section id="mightyconnect" class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950 py-24 border-t border-slate-200/60 dark:border-slate-800 transition-colors duration-300">
+  <section id="mightyconnect" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900/60 dark:to-slate-950 py-24 border-t border-slate-200/60 dark:border-slate-800 transition-colors duration-300">
     <div class="mx-auto max-w-6xl px-6">
       <!-- Top Hero Card -->
       <div v-reveal class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 p-8 md:p-12 shadow-sm dark:shadow-black/40">
-        <div class="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row">
-          <div class="max-w-2xl flex-1">
-            <div class="flex items-center gap-2">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
-                {{ t('mightyconnect.tag') }}
-              </span>
-              <span class="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:text-slate-300">
-                Mesh P2P Platform
-              </span>
-            </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+              {{ t('mightyconnect.tag') }}
+            </span>
+            <span class="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:text-slate-300">
+              Mesh P2P Platform
+            </span>
+          </div>
 
-            <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
-              <span class="text-pink-600 dark:text-pink-400">{{ t('mightyconnect.title') }}</span>
-              <span class="text-slate-300 dark:text-slate-700 mx-2 font-light">/</span>
-              <span>{{ t('mightyconnect.subtitle') }}</span>
-            </h2>
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl lg:text-4xl lg:whitespace-nowrap">
+            <span class="text-pink-600 dark:text-pink-400">{{ t('mightyconnect.title') }}</span>
+            <span class="text-slate-300 dark:text-slate-700 mx-2 font-light">/</span>
+            <span>{{ t('mightyconnect.subtitle') }}</span>
+          </h2>
+        </div>
 
-            <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
+        <div class="mt-6 flex flex-col-reverse items-center justify-between gap-8 lg:flex-row">
+          <div class="flex-1">
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed break-keep">
               {{ t('mightyconnect.desc') }}
             </p>
           </div>
 
-          <!-- MightyConnect Visual Card (Unified Size) -->
-          <div class="relative shrink-0 w-full lg:w-72 xl:w-80">
-            <div class="overflow-hidden rounded-2xl border border-cyan-500/30 dark:border-cyan-500/40 bg-slate-950 shadow-lg shadow-cyan-900/10 group">
-              <div class="relative h-44 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-3">
+          <!-- MightyConnect Visual Card (2/3 Compact Unified Size) -->
+          <div class="relative shrink-0 w-48 sm:w-52 lg:w-48 xl:w-52">
+            <div class="overflow-hidden rounded-xl border border-cyan-500/30 dark:border-cyan-500/40 bg-slate-950 shadow-md shadow-cyan-900/10 group">
+              <div class="relative h-28 sm:h-30 w-full bg-white dark:bg-slate-900/90 flex items-center justify-center p-2">
                 <img
                   :src="connectImg"
                   alt="MightyConnect Architecture"
@@ -95,12 +97,12 @@ const features = [
                   decoding="async"
                 />
               </div>
-              <div class="px-3.5 py-2.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-xs">
-                <span class="font-semibold text-cyan-300 flex items-center gap-1.5">
-                  <span class="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                  MightyConnect Mesh
+              <div class="px-2.5 py-1.5 bg-slate-900/90 border-t border-slate-800 flex items-center justify-between text-[11px]">
+                <span class="font-semibold text-cyan-300 flex items-center gap-1">
+                  <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                  MightyConnect
                 </span>
-                <span class="text-[11px] text-slate-400 font-mono">P2P Mesh + ZTNA</span>
+                <span class="text-[10px] text-slate-400 font-mono">P2P + ZTNA</span>
               </div>
             </div>
           </div>

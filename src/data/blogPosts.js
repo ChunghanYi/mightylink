@@ -20,6 +20,17 @@ export const blogPosts = [
     source: 'slowbootkernelhacks.blogspot.com'
   },
   {
+    id: 'dpdk-high-performance-load-balancer',
+    title: {
+      ko: '고성능 Load Balancer 만들기',
+      en: 'Building a High-Performance Load Balancer'
+    },
+    url: 'https://slowbootkernelhacks.blogspot.com/2025/12/dpdk-high-performance-load-balancer.html',
+    category: 'DPDK / Load Balancer',
+    date: '2025.12',
+    source: 'slowbootkernelhacks.blogspot.com'
+  },
+  {
     id: 'high-performance-web-server-appliance',
     title: {
       ko: 'High Performance Web Server Appliance 만들기',
