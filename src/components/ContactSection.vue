@@ -251,7 +251,7 @@ const handleDownload = async (docKey, filePath, fileName) => {
                 </div>
                 <button
                   type="button"
-                  @click="handleDownload(DOC_KEYS.CONNECT, './docs/Mighty_Connect_Security_Platform_v1.01.pdf', 'Mighty_Connect_Security_Platform_v1.01.pdf')"
+                  @click="handleDownload(DOC_KEYS.CONNECT, './docs/Mighty_Connect_Security_Platform_v1.02.pdf', 'Mighty_Connect_Security_Platform_v1.02.pdf')"
                   :disabled="isDownloading[DOC_KEYS.CONNECT]"
                   class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-cyan-400 dark:hover:border-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
                 >
