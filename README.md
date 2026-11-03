@@ -70,8 +70,8 @@ mightylink/
 ├── public/
 │   ├── docs/
 │   │   ├── Mighty_DDoS_Mitigator_v1.02.pdf
-│   │   ├── Mighty_ADC_v0.93.pdf
-│   │   └── Mighty_Connect_Security_Platform_v1.01.pdf
+│   │   ├── Mighty_ADC_v0.94.pdf
+│   │   └── Mighty_Connect_Security_Platform_v1.02.pdf
 │   └── favicon.png
 ├── src/
 │   ├── assets/main.css
