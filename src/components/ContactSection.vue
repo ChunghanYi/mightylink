@@ -215,7 +215,7 @@ const handleDownload = async (docKey, filePath, fileName) => {
                 </div>
                 <button
                   type="button"
-                  @click="handleDownload(DOC_KEYS.ADC, './docs/Mighty_ADC_v0.94.pdf', 'Mighty_ADC_v0.94.pdf')"
+                  @click="handleDownload(DOC_KEYS.ADC, './docs/Mighty_ADC_v0.96.pdf', 'Mighty_ADC_v0.96.pdf')"
                   :disabled="isDownloading[DOC_KEYS.ADC]"
                   class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
                 >
