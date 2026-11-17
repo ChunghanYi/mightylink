@@ -11,7 +11,8 @@ const STORAGE_KEY_PREFIX = 'mightylink_doc_count_'
 export const DOC_KEYS = {
   XDDOS: 'doc_xddos',
   ADC: 'doc_adc',
-  CONNECT: 'doc_connect'
+  CONNECT: 'doc_connect',
+  DDI: 'doc_ddi'
 }
 
 /**

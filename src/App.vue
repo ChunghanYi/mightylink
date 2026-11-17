@@ -5,6 +5,7 @@ import CompanySection from './components/CompanySection.vue'
 import MightyXDDoSSection from './components/MightyXDDoSSection.vue'
 import MightyADCSection from './components/MightyADCSection.vue'
 import MightyConnectSection from './components/MightyConnectSection.vue'
+import MightyDDISection from './components/MightyDDISection.vue'
 import DevicesSection from './components/DevicesSection.vue'
 import BlogSection from './components/BlogSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -20,6 +21,7 @@ import Footer from './components/Footer.vue'
       <MightyXDDoSSection />
       <MightyADCSection />
       <MightyConnectSection />
+      <MightyDDISection />
       <DevicesSection />
       <BlogSection />
       <ContactSection />

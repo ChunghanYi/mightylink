@@ -40,6 +40,16 @@ const productItems = [
     badge: 'P2P Network',
     colorClasses: 'bg-cyan-100 text-cyan-600 dark:bg-cyan-900/40 dark:text-cyan-400',
     iconPath: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+  },
+  {
+    id: 'mightyddi',
+    nameKey: 'nav.mightyddi',
+    descKey: 'nav.mightyddiDesc',
+    href: '#mightyddi',
+    badge: 'DHCP · DNS · IPAM',
+    statusKey: 'mightyddi.status',
+    colorClasses: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400',
+    iconPath: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01'
   }
 ]
 
@@ -166,12 +176,18 @@ onBeforeUnmount(() => {
                     </svg>
                   </div>
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5 flex-wrap">
                       <span class="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap">
                         {{ t(item.nameKey) }}
                       </span>
                       <span class="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 whitespace-nowrap">
                         {{ item.badge }}
+                      </span>
+                      <span
+                        v-if="item.statusKey"
+                        class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 whitespace-nowrap"
+                      >
+                        {{ t(item.statusKey) }}
                       </span>
                     </div>
                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-snug line-clamp-1">
@@ -272,7 +288,15 @@ onBeforeUnmount(() => {
             @click="handleNavClick"
             class="flex items-center justify-between py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
           >
-            <span class="whitespace-nowrap">{{ t(item.nameKey) }}</span>
+            <div class="flex items-center gap-1.5">
+              <span class="whitespace-nowrap">{{ t(item.nameKey) }}</span>
+              <span
+                v-if="item.statusKey"
+                class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 whitespace-nowrap"
+              >
+                {{ t(item.statusKey) }}
+              </span>
+            </div>
             <span class="text-[10px] text-slate-400 dark:text-slate-500 font-normal whitespace-nowrap">{{ item.badge }}</span>
           </a>
         </div>

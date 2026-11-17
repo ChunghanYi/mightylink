@@ -12,12 +12,14 @@ const counts = ref({
   [DOC_KEYS.XDDOS]: getLocalCount(DOC_KEYS.XDDOS),
   [DOC_KEYS.ADC]: getLocalCount(DOC_KEYS.ADC),
   [DOC_KEYS.CONNECT]: getLocalCount(DOC_KEYS.CONNECT),
+  [DOC_KEYS.DDI]: getLocalCount(DOC_KEYS.DDI),
 })
 
 const isDownloading = ref({
   [DOC_KEYS.XDDOS]: false,
   [DOC_KEYS.ADC]: false,
   [DOC_KEYS.CONNECT]: false,
+  [DOC_KEYS.DDI]: false,
 })
 
 const formatCount = (val) => {
@@ -27,14 +29,16 @@ const formatCount = (val) => {
 
 onMounted(async () => {
   // Fetch latest counts from serverless Counter API
-  const [xddosCount, adcCount, connectCount] = await Promise.all([
+  const [xddosCount, adcCount, connectCount, ddiCount] = await Promise.all([
     fetchDocCount(DOC_KEYS.XDDOS),
     fetchDocCount(DOC_KEYS.ADC),
     fetchDocCount(DOC_KEYS.CONNECT),
+    fetchDocCount(DOC_KEYS.DDI),
   ])
   counts.value[DOC_KEYS.XDDOS] = xddosCount
   counts.value[DOC_KEYS.ADC] = adcCount
   counts.value[DOC_KEYS.CONNECT] = connectCount
+  counts.value[DOC_KEYS.DDI] = ddiCount
 })
 
 const handleDownload = async (docKey, filePath, fileName) => {
@@ -263,6 +267,48 @@ const handleDownload = async (docKey, filePath, fileName) => {
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
                   <span>{{ isDownloading[DOC_KEYS.CONNECT] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
+                </button>
+              </div>
+
+              <!-- Doc 4: MightyDDI -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/60 p-5 hover:border-indigo-300 dark:hover:border-indigo-500/50 transition">
+                <div class="flex items-start gap-3.5">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 font-bold text-xs">
+                    PDF
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <h4 class="text-sm font-bold text-slate-900 dark:text-white">{{ t('contact.docDDI') }}</h4>
+                      <span class="inline-flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-950/90 px-2 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-300 border border-amber-300 dark:border-amber-700/80">
+                        <span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                        {{ t('contact.docStatusWip') }}
+                      </span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{{ t('contact.docDDIDesc') }}</p>
+                    <div class="mt-2.5 flex items-center gap-1.5">
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-semibold border border-indigo-200/70 dark:border-indigo-800/60 text-[11px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {{ t('contact.docDownloads', { count: formatCount(counts[DOC_KEYS.DDI]) }) }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  @click="handleDownload(DOC_KEYS.DDI, './docs/Mighty_Protective_DNS_DHCP_IPAM_v0.5.pdf', 'Mighty_Protective_DNS_DHCP_IPAM_v0.5.pdf')"
+                  :disabled="isDownloading[DOC_KEYS.DDI]"
+                  class="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-indigo-400 dark:hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300 shadow-xs transition active:scale-95 disabled:opacity-70 cursor-pointer"
+                >
+                  <svg v-if="!isDownloading[DOC_KEYS.DDI]" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <svg v-else class="animate-spin h-4 w-4 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>{{ isDownloading[DOC_KEYS.DDI] ? t('contact.downloading') : t('contact.downloadPdf') }}</span>
                 </button>
               </div>
             </div>

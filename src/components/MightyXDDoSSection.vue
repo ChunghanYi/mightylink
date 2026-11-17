@@ -69,6 +69,14 @@ const features = [
     textColor: 'text-blue-600 dark:text-cyan-400',
     tagBg: 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-cyan-300 border-blue-200/80 dark:border-blue-800',
   },
+  {
+    key: 'feat9',
+    tag: 'Inline DNS Sinkhole',
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    bgColor: 'bg-sky-50 dark:bg-sky-950/80',
+    textColor: 'text-sky-600 dark:text-sky-400',
+    tagBg: 'bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border-sky-200/80 dark:border-sky-800',
+  },
 ]
 </script>
 

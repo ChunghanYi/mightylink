@@ -203,7 +203,7 @@ onUnmounted(() => {
         </a>
       </div>
 
-      <div class="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mx-auto mt-14 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Series 01: MightyXDDoS BR (DDoS Mitigator + L2 Bridge) - Rose/Amber theme -->
         <a
           href="#mightyxddos"
@@ -249,7 +249,7 @@ onUnmounted(() => {
         <!-- Series 03: MightyConnect (P2P Mesh Network) - Cyan/Teal theme -->
         <a
           href="#mightyconnect"
-          class="group relative flex flex-col justify-between rounded-2xl border border-cyan-200/90 dark:border-cyan-900/60 bg-gradient-to-br from-cyan-50/90 via-teal-50/40 to-emerald-100/50 dark:from-cyan-950/50 dark:via-slate-900/90 dark:to-teal-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 sm:col-span-2 lg:col-span-1"
+          class="group relative flex flex-col justify-between rounded-2xl border border-cyan-200/90 dark:border-cyan-900/60 bg-gradient-to-br from-cyan-50/90 via-teal-50/40 to-emerald-100/50 dark:from-cyan-950/50 dark:via-slate-900/90 dark:to-teal-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-cyan-400 dark:hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1"
         >
           <div>
             <div class="flex items-center justify-between">
@@ -260,6 +260,32 @@ onUnmounted(() => {
             <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.connectDesc') }}</p>
           </div>
           <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400">
+            <span>{{ t('hero.viewProduct') }}</span>
+            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Series 04: MightyDDI (DHCP, DNS, IPAM Security Platform) - Indigo/Purple theme -->
+        <a
+          href="#mightyddi"
+          class="group relative flex flex-col justify-between rounded-2xl border border-indigo-200/90 dark:border-indigo-900/60 bg-gradient-to-br from-indigo-50/90 via-purple-50/40 to-sky-100/50 dark:from-indigo-950/50 dark:via-slate-900/90 dark:to-purple-950/40 p-6 text-left shadow-xs transition-all duration-300 hover:border-indigo-400 dark:hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1"
+        >
+          <div>
+            <div class="flex items-center justify-between gap-1">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xs font-extrabold tracking-widest text-indigo-600 dark:text-indigo-400">MightyDDI</span>
+                <span class="rounded-full border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/90 px-1.5 py-0.5 text-[10px] font-bold text-amber-700 dark:text-amber-300">
+                  {{ t('mightyddi.status') }}
+                </span>
+              </div>
+              <span class="rounded-full border border-indigo-200/80 dark:border-indigo-800/80 bg-indigo-100/90 dark:bg-indigo-950/90 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:text-indigo-300">Series 04</span>
+            </div>
+            <p class="mt-2 text-base font-bold text-indigo-700 dark:text-indigo-300">{{ t('hero.ddiTag') }}</p>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed break-keep">{{ t('hero.ddiDesc') }}</p>
+          </div>
+          <div class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
             <span>{{ t('hero.viewProduct') }}</span>
             <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
